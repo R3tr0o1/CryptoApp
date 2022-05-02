@@ -19,12 +19,6 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  int currentindex = 0;
-  final screen = [
-    const DashboardScreen(),
-    const MarketScreen(),
-    const ProfileScreen()
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

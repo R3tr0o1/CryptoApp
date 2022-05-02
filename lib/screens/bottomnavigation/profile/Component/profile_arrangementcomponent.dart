@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../Auth/Login/AuthorizationScreen.dart';
+import '../../../Auth/Login/authorizationScreen.dart';
 
 class ProfileArrangement extends StatefulWidget {
   const ProfileArrangement({Key? key}) : super(key: key);
@@ -49,11 +49,9 @@ class _ProfileArrangementState extends State<ProfileArrangement> {
                     color: const Color(0xffE0FDFF),
                     borderRadius: BorderRadius.circular(10.r),
                     image: const DecorationImage(
-                        colorFilter:
-                            ColorFilter.mode(Colors.green, BlendMode.srcIn),
                         image: AssetImage(
-                          'asset/image/privacy.png',
-                        ))),
+                      'asset/image/Lock.png',
+                    ))),
               ),
               SizedBox(
                 width: 16.w,
@@ -161,7 +159,7 @@ class _ProfileArrangementState extends State<ProfileArrangement> {
                     color: const Color(0xffFFFCE0),
                     borderRadius: BorderRadius.circular(10.r),
                     image: const DecorationImage(
-                        image: AssetImage('asset/image/fill.png'))),
+                        image: AssetImage('asset/image/bell.png'))),
               ),
               SizedBox(
                 width: 16.w,

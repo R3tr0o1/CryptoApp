@@ -17,7 +17,7 @@ class _ProfileHEaderState extends State<ProfileHEader> {
           height: 30.h,
         ),
         CircleAvatar(
-          backgroundImage: AssetImage(
+          backgroundImage: const AssetImage(
             'asset/image/Bigavatar.png',
           ),
           radius: 40.r,
@@ -50,9 +50,9 @@ class _ProfileHEaderState extends State<ProfileHEader> {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Color(0xff5EDE99),
-                          Color(0xff4DC885).withOpacity(0.8),
-                          Color(0xff4DC885).withOpacity(0.8),
+                          const Color(0xff5EDE99),
+                          const Color(0xff4DC885).withOpacity(0.8),
+                          const Color(0xff4DC885).withOpacity(0.8),
                         ])),
                 height: 100,
                 child: Row(
@@ -122,7 +122,7 @@ class _ProfileHEaderState extends State<ProfileHEader> {
                               Text(
                                 'Withdraw',
                                 style: TextStyle(
-                                    color: Color(0xff33D587),
+                                    color: const Color(0xff33D587),
                                     fontFamily: 'MUlish',
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600),
@@ -140,7 +140,7 @@ class _ProfileHEaderState extends State<ProfileHEader> {
                             Text(
                               'Deposit',
                               style: TextStyle(
-                                  color: Color(0xff33D587),
+                                  color: const Color(0xff33D587),
                                   fontFamily: 'MUlish',
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600),

@@ -2,17 +2,17 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../Common/AuthButton.dart';
+import '../../../../../Common/authbutton.dart';
 import '../../../../BottomNavigation/bottomnavigation.dart';
 
-class signup2bottom extends StatefulWidget {
-  const signup2bottom({Key? key}) : super(key: key);
+class Signup2bottom extends StatefulWidget {
+  const Signup2bottom({Key? key}) : super(key: key);
 
   @override
-  State<signup2bottom> createState() => _signup2bottomState();
+  State<Signup2bottom> createState() => _signup2bottomState();
 }
 
-class _signup2bottomState extends State<signup2bottom> {
+class _signup2bottomState extends State<Signup2bottom> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,15 +20,15 @@ class _signup2bottomState extends State<signup2bottom> {
         CommonAuthButton(
           text: 'READY',
           onPressed: () {
-            Get.offAll(NavigationScreen());
+            Get.offAll(const NavigationScreen());
           },
         ),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
         Center(
           child: Text.rich(
             TextSpan(
               text: "Already have an account?  ",
-              style: TextStyle(
+              style: const TextStyle(
                   height: 1.3,
                   fontSize: 12,
                   color: Color(
@@ -39,7 +39,7 @@ class _signup2bottomState extends State<signup2bottom> {
                 TextSpan(
                   recognizer: TapGestureRecognizer()..onTap = () {},
                   text: 'Sign in',
-                  style: TextStyle(
+                  style: const TextStyle(
                       height: 1.3,
                       color: Color(
                         0xff5EDE99,

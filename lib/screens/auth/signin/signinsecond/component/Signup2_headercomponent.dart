@@ -15,8 +15,8 @@ class _Signup2headerState extends State<Signup2header> {
       children: [
         Center(
             child: SvgPicture.asset('asset/svg/Vector.svg',
-                color: Color(0xff5EDE99))),
-        Center(
+                color: const Color(0xff5EDE99))),
+        const Center(
             child: Text(
           'Authorization',
           style: TextStyle(
@@ -25,16 +25,16 @@ class _Signup2headerState extends State<Signup2header> {
               fontSize: 32,
               height: 1.25),
         )),
-        SizedBox(
+        const SizedBox(
           height: 4,
         ),
-        Center(
+        const Center(
             child: Text(
           'Trusted by millions of users worldwide ',
           style: TextStyle(
               color: Color(0xff5EDE99), height: 1.25, fontFamily: 'Mulish'),
         )),
-        SizedBox(
+        const SizedBox(
           height: 56,
         ),
       ],

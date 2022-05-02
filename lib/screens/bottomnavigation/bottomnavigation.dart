@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:myapp/screens/BottomNavigation/Home/Home.dart';
+import 'package:myapp/screens/BottomNavigation/Home/home.dart';
 import 'package:myapp/screens/BottomNavigation/Market/market.dart';
 import 'package:myapp/screens/BottomNavigation/Profile/profile.dart';
 
@@ -14,7 +14,7 @@ class NavigationScreen extends StatefulWidget {
 
 class _NavigationScreenState extends State<NavigationScreen> {
   int currentindex = 0;
-  // ignore: non_constant_identifier_names
+
   final Screen = [
     const DashboardScreen(),
     const MarketScreen(),

@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../../Common/AuthTextformfiel.dart';
+import '../../../../../Common/authtextformfiel.dart';
 
 class Signup2Textfiel extends StatefulWidget {
   const Signup2Textfiel({Key? key}) : super(key: key);
@@ -22,53 +22,53 @@ class _Signup2TextfielState extends State<Signup2Textfiel> {
         Text(
           'Email',
           style: GoogleFonts.montserrat(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
                 fontWeight: FontWeight.w500, height: 1.25, fontSize: 14),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         CommonAuthTextField(
           controller: emailcontroller,
           hinttext: 'Enter Email',
         ),
-        SizedBox(height: 13),
+        const SizedBox(height: 13),
         Text(
           'Password',
           style: GoogleFonts.montserrat(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 14,
               height: 1.25,
             ),
           ),
         ),
-        SizedBox(height: 9),
+        const SizedBox(height: 9),
         CommonAuthTextField(
           controller: passwordcontroller,
           hinttext: 'Enter Passsword',
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Text(
           'Confirm Password',
           style: GoogleFonts.montserrat(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 14,
               height: 1.25,
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 9,
         ),
         CommonAuthTextField(
             hinttext: 'Confirm Password',
             controller: confirmpasswordcontroller),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Row(
@@ -79,7 +79,7 @@ class _Signup2TextfielState extends State<Signup2Textfiel> {
               child: Text.rich(
                 TextSpan(
                   text: "I agree to  ",
-                  style: TextStyle(
+                  style: const TextStyle(
                       height: 1.3,
                       fontSize: 12,
                       color: Color(
@@ -90,7 +90,7 @@ class _Signup2TextfielState extends State<Signup2Textfiel> {
                     TextSpan(
                       recognizer: TapGestureRecognizer()..onTap = () {},
                       text: 'Terms and Conditions, Privacy Policy',
-                      style: TextStyle(
+                      style: const TextStyle(
                         height: 1.3,
                         color: Color(
                           0xff5EDE99,
@@ -100,7 +100,7 @@ class _Signup2TextfielState extends State<Signup2Textfiel> {
                         fontSize: 12,
                       ),
                     ),
-                    TextSpan(
+                    const TextSpan(
                       text: '\nand',
                       style: TextStyle(
                         height: 1.3,
@@ -115,7 +115,7 @@ class _Signup2TextfielState extends State<Signup2Textfiel> {
                     TextSpan(
                       recognizer: TapGestureRecognizer()..onTap = () {},
                       text: ' Content Policy',
-                      style: TextStyle(
+                      style: const TextStyle(
                         height: 1.3,
                         color: Color(
                           0xff5EDE99,
@@ -131,7 +131,7 @@ class _Signup2TextfielState extends State<Signup2Textfiel> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 27,
         ),
       ],

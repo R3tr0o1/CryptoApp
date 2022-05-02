@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
-import 'package:myapp/Common/Sizedbox.dart';
+import 'package:myapp/Common/sizedbox.dart';
 
 import '../../../../Common/cryptocard.dart';
 
@@ -23,7 +25,7 @@ class _MarketCardState extends State<MarketCard> {
             image: AssetImage('asset/image/bitcoinB.png'),
             color: Color(0xff00CB6A),
             arrowimage: 'asset/image/arrowwhite.png'),
-        SpaceH8(),
+        const SpaceH8(),
         const commoncryptocard(
             shorttext: 'ETH/BUSD',
             text: 'Etherium',
@@ -32,7 +34,7 @@ class _MarketCardState extends State<MarketCard> {
             image: AssetImage('asset/image/ethb.png'),
             color: Color(0xffF26666),
             arrowimage: 'asset/image/arrowdown.png'),
-        SpaceH8(),
+        const SpaceH8(),
         const commoncryptocard(
             shorttext: 'LTC/BUSD',
             text: 'Litecoin',
@@ -41,7 +43,7 @@ class _MarketCardState extends State<MarketCard> {
             image: AssetImage('asset/image/litecoin.png'),
             color: Color(0xffF26666),
             arrowimage: 'asset/image/arrowdown.png'),
-        SpaceH8(),
+        const SpaceH8(),
         const commoncryptocard(
             shorttext: 'SOL/BUSD',
             text: 'Solana',
@@ -50,7 +52,7 @@ class _MarketCardState extends State<MarketCard> {
             image: AssetImage('asset/image/SOL.png'),
             color: Color(0xffF26666),
             arrowimage: 'asset/image/arrowdown.png'),
-        SpaceH8(),
+        const SpaceH8(),
         const commoncryptocard(
             shorttext: 'BNB/BUSD',
             text: 'Binance Coin',
@@ -59,7 +61,7 @@ class _MarketCardState extends State<MarketCard> {
             image: AssetImage('asset/image/BNB.png'),
             color: Color(0xffF26666),
             arrowimage: 'asset/image/arrowdown.png'),
-        SpaceH8(),
+        const SpaceH8(),
         const commoncryptocard(
             shorttext: 'XRP/BUSD',
             text: 'Ripple',

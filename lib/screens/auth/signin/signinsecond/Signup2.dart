@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/screens/Auth/Signup/Signup2/component/Signup2_Textfieldscomponent.dart';
-import 'package:myapp/screens/Auth/Signup/Signup2/component/Signup2_headercomponent.dart';
-import 'package:myapp/screens/Auth/Signup/Signup2/component/signup2_bottomcomponent.dart';
+
+import 'component/Signup2_Textfieldscomponent.dart';
+import 'component/Signup2_headercomponent.dart';
+import 'component/signup2_bottomcomponent.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);

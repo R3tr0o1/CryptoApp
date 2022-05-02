@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: camel_case_types
 class commoncryptocard extends StatelessWidget {
   final String shorttext;
   final String text;
@@ -40,7 +41,7 @@ class commoncryptocard extends StatelessWidget {
               height: 64.h,
               width: 64.w,
               decoration: BoxDecoration(
-                  color: Color(0xffF7F7F7),
+                  color: const Color(0xffF7F7F7),
                   image: DecorationImage(
                     image: image,
                   ),
@@ -58,7 +59,7 @@ class commoncryptocard extends StatelessWidget {
                       fontFamily: 'Mulish',
                       fontWeight: FontWeight.w700,
                       fontSize: 20.sp,
-                      color: Color(0xff152C07)),
+                      color: const Color(0xff152C07)),
                 ),
                 SizedBox(
                   height: 4.h,
@@ -69,7 +70,7 @@ class commoncryptocard extends StatelessWidget {
                       fontFamily: 'Mulish',
                       fontWeight: FontWeight.w400,
                       fontSize: 16.sp,
-                      color: Color(0xff5D5C5D)),
+                      color: const Color(0xff5D5C5D)),
                 ),
               ],
             ),

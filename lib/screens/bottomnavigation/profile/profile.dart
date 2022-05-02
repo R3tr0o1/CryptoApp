@@ -17,7 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: ListView(
         children: [
           Column(
-            children: [
+            children: const [
               ProfileHEader(),
               ProfileTransaction(),
               ProfileArrangement(),
