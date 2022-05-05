@@ -4,7 +4,7 @@ class CommonAuthTextField extends StatelessWidget {
   final String hinttext;
   final TextEditingController controller;
   final Function()? onTap;
-  const CommonAuthTextField({
+  CommonAuthTextField({
     required this.hinttext,
     Key? key,
     required this.controller,
@@ -16,7 +16,13 @@ class CommonAuthTextField extends StatelessWidget {
     return SizedBox(
       height: 42,
       width: 345,
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'enter some text';
+          }
+          return null;
+        },
         onTap: onTap ?? () {},
         controller: controller,
         decoration: InputDecoration(

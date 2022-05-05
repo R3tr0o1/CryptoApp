@@ -21,15 +21,15 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
   String dropdownValue = 'User';
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  TextEditingController enterfullname = TextEditingController();
-  TextEditingController contact = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   bool sucess = false;
   String? usernameEmail;
 
   void _register() async {
     User? user = (await auth.createUserWithEmailAndPassword(
-      email: enterfullname.text,
-      password: contact.text,
+      email: email.text,
+      password: password.text,
     ))
         .user;
     if (user != null) {
@@ -58,8 +58,7 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
             ),
           ),
           const SpaceH8(),
-          CommonAuthTextField(
-              hinttext: "User's Full Name ", controller: enterfullname),
+          CommonAuthTextField(hinttext: "User's Full Name ", controller: email),
           const SizedBox(
             height: 16,
           ),
@@ -73,7 +72,7 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
           const SpaceH8(),
           CommonAuthTextField(
               hinttext: "Phone number that can be contacted ",
-              controller: contact),
+              controller: password),
           const SizedBox(
             height: 16,
           ),
