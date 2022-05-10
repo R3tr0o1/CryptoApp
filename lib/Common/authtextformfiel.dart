@@ -19,7 +19,7 @@ class CommonAuthTextField extends StatelessWidget {
       child: TextFormField(
         validator: (value) {
           if (value!.isEmpty) {
-            return 'enter some text';
+            return null;
           }
           return null;
         },

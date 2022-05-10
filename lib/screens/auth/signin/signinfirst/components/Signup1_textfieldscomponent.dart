@@ -1,17 +1,21 @@
+import 'dart:ffi';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/Common/authtextformfiel.dart';
-
+import 'package:myapp/screens/auth/signin/signinsecond/Signup2.dart';
 import '../../../../../Common/authbutton.dart';
 import '../../../../../Common/sizedbox.dart';
-import '../../../../../main.dart';
 import '../../../login/authorizationScreen.dart';
 
 class Signup1Textfield extends StatefulWidget {
-  const Signup1Textfield({Key? key}) : super(key: key);
+  const Signup1Textfield({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<Signup1Textfield> createState() => _Signup1TextfieldState();
@@ -20,35 +24,18 @@ class Signup1Textfield extends StatefulWidget {
 class _Signup1TextfieldState extends State<Signup1Textfield> {
   String dropdownValue = 'User';
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
 
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
   bool sucess = false;
   String? usernameEmail;
-
-  void _register() async {
-    User? user = (await auth.createUserWithEmailAndPassword(
-      email: email.text,
-      password: password.text,
-    ))
-        .user;
-    if (user != null) {
-      setState(() {
-        sucess = true;
-        usernameEmail = user.email;
-      });
-    } else {
-      setState(() {
-        sucess = false;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Full Name',
@@ -58,7 +45,8 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
             ),
           ),
           const SpaceH8(),
-          CommonAuthTextField(hinttext: "User's Full Name ", controller: email),
+          CommonAuthTextField(
+              hinttext: "User's Full Name ", controller: fullNameController),
           const SizedBox(
             height: 16,
           ),
@@ -72,7 +60,7 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
           const SpaceH8(),
           CommonAuthTextField(
               hinttext: "Phone number that can be contacted ",
-              controller: password),
+              controller: phoneNumberController),
           const SizedBox(
             height: 16,
           ),
@@ -124,11 +112,10 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
           CommonAuthButton(
             text: 'NEXT',
             onPressed: () {
-              setState(() {
-                if (_formKey.currentState!.validate()) {
-                  _register();
-                }
-              });
+              Get.to(SignInScreen(
+                fullNameController: fullNameController,
+                phoneNumberController: phoneNumberController,
+              ));
             },
           ),
           const SizedBox(
@@ -172,5 +159,12 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    fullNameController.dispose();
+    phoneNumberController.dispose();
+    super.dispose();
   }
 }

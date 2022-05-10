@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:myapp/screens/Auth/Login/AuthorizationScreen.dart';
+import 'package:myapp/screens/splashscreen/splashscreen.dart';
 
 final FirebaseAuth auth = FirebaseAuth.instance;
 Future<void> main() async {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       builder: (_) {
         return const GetMaterialApp(
-          home: AuthorizationScreen(),
+          home: SplashScreen(),
         );
       },
     );

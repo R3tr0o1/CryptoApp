@@ -23,10 +23,7 @@ class _SignUp1ScreenState extends State<SignUpBottom1Screen> {
           children: [
             Text.rich(
               TextSpan(
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    Get.to(const SignInScreen());
-                  },
+                recognizer: TapGestureRecognizer()..onTap = () {},
                 text: 'Skip  this step  ',
                 style: const TextStyle(
                     height: 1.3,

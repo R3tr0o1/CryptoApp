@@ -19,7 +19,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
         leading: IconButton(
             onPressed: () {
               setState(() {
-                Get.offAll(const NavigationScreen());
+                Get.offAll(NavigationScreen(
+                  fullNameforprofile: '',
+                ));
               });
             },
             icon: Image.asset('asset/image/back.png')),

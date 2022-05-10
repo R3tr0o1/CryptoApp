@@ -5,7 +5,7 @@ import 'components/SignUp1_bottomcomponent.dart';
 import 'components/SignUp1_headercomponent.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+  SignUpScreen({Key? key}) : super(key: key);
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();

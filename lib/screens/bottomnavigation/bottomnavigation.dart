@@ -1,12 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'package:myapp/screens/BottomNavigation/Home/home.dart';
 import 'package:myapp/screens/BottomNavigation/Market/market.dart';
 import 'package:myapp/screens/BottomNavigation/Profile/profile.dart';
 
 class NavigationScreen extends StatefulWidget {
-  const NavigationScreen({Key? key}) : super(key: key);
+  final String? fullNameforprofile;
+  NavigationScreen({
+    Key? key,
+    required this.fullNameforprofile,
+  }) : super(key: key);
 
   @override
   State<NavigationScreen> createState() => _NavigationScreenState();
@@ -15,11 +21,14 @@ class NavigationScreen extends StatefulWidget {
 class _NavigationScreenState extends State<NavigationScreen> {
   int currentindex = 0;
 
-  final Screen = [
+  late final Screen = [
     const DashboardScreen(),
     const MarketScreen(),
-    const ProfileScreen()
+    ProfileScreen(
+      fullName1: widget.fullNameforprofile.toString(),
+    )
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

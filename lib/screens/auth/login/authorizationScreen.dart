@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/Common/sizedbox.dart';
 import 'package:myapp/screens/Auth/Login/components/login_headercomponent.dart';
 import 'package:myapp/screens/Auth/signin/signinfirst/SignUp.dart';
+
 import 'package:myapp/screens/bottomnavigation/bottomnavigation.dart';
 import '../../../Common/AuthTextformfiel.dart';
 import '../../../Common/authbutton.dart';
@@ -20,8 +21,8 @@ class AuthorizationScreen extends StatefulWidget {
 }
 
 class _AuthorizationScreenState extends State<AuthorizationScreen> {
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool? _success;
   String? _userEmail;
@@ -29,8 +30,8 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
   void _signInWithEmailAndPassword() async {
     try {
       final User? user = (await auth.signInWithEmailAndPassword(
-        email: email.text,
-        password: password.text,
+        email: emailController.text,
+        password: passwordController.text,
       ))
           .user;
 
@@ -38,7 +39,6 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
         setState(() {
           _success = true;
           _userEmail = user.email;
-          Get.to(NavigationScreen());
         });
       } else {
         setState(() {
@@ -48,16 +48,16 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
     } catch (e) {
       showDialog(
           context: context,
-          builder: (BuildContext context) => AlertDialog(
-                title: const Text(' Wrong email or pass'),
+          builder: (BuildContext context) => const AlertDialog(
+                title: Text(' Wrong email or pass'),
               ));
     }
   }
 
   @override
   void dispose() {
-    email.dispose();
-    password.dispose();
+    emailController.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 
@@ -86,7 +86,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                   height: 8,
                 ),
                 CommonAuthTextField(
-                  controller: email,
+                  controller: emailController,
                   hinttext: 'Enter Email',
                 ),
                 const SizedBox(height: 13),
@@ -102,7 +102,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                 ),
                 const SizedBox(height: 9),
                 CommonAuthTextField(
-                  controller: password,
+                  controller: passwordController,
                   hinttext: 'Enter Passsword',
                 ),
                 Center(
@@ -116,13 +116,38 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                 )),
                 const SizedBox(height: 24),
                 CommonAuthButton(
-                  text: 'Enter',
-                  onPressed: () async {
-                    if (_formKey.currentState!.validate()) {
-                      _signInWithEmailAndPassword();
-                    }
-                  },
-                ),
+                    text: 'Enter',
+                    onPressed: () {
+                      if (emailController.text.isEmpty &&
+                          passwordController.text.isEmpty) {
+                        return ScaffoldMessenger.of(context)
+                            .showSnackBar(SnackBar(
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25)),
+                          behavior: SnackBarBehavior.floating,
+                          backgroundColor: Colors.red,
+                          content: Text(
+                            'enter valid  email and pass',
+                            textAlign: TextAlign.center,
+                          ),
+                        ));
+                      } else if (passwordController.text.isEmpty) {
+                        return ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          content: Text('enter  valid password'),
+                        ));
+                      } else if (emailController.text.isEmpty) {
+                        return ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          content: Text('enter  valid email'),
+                        ));
+                      } else {
+                        if (_formKey.currentState!.validate()) {
+                          _signInWithEmailAndPassword();
+                        }
+                      }
+                    }),
                 const SizedBox(height: 24),
                 Center(
                   child: Text.rich(
@@ -139,10 +164,10 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                         TextSpan(
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              Get.to(const SignUpScreen());
+                              Get.to(SignUpScreen());
                             },
                           text: 'Register here',
-                          style: const TextStyle(
+                          style: TextStyle(
                               height: 1.3,
                               color: Color(
                                 0xff5EDE99,

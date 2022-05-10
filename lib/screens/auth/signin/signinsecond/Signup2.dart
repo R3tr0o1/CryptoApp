@@ -5,7 +5,10 @@ import 'component/Signup2_headercomponent.dart';
 import 'component/signup2_bottomcomponent.dart';
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+  final TextEditingController fullNameController;
+  final TextEditingController phoneNumberController;
+  SignInScreen({Key? key, required this.fullNameController, required this.phoneNumberController})
+      : super(key: key);
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -18,9 +21,12 @@ class _SignInScreenState extends State<SignInScreen> {
       backgroundColor: const Color(0xffE5E5E5),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 93, 15, 0),
-        child: ListView(children: const [
+        child: ListView(children: [
           Signup2header(),
-          Signup2Textfiel(),
+          Signup2Textfield(
+            fullName: widget.fullNameController,
+            phoneNumber: widget.phoneNumberController,
+          ),
           Signup2bottom(),
         ]),
       ),

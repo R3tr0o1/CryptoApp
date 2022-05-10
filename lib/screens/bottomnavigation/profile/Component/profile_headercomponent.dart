@@ -1,8 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:myapp/models/user.dart';
+
 class ProfileHEader extends StatefulWidget {
-  const ProfileHEader({Key? key}) : super(key: key);
+  final String fullName;
+  ProfileHEader({
+    Key? key,
+    required this.fullName,
+  }) : super(key: key);
 
   @override
   State<ProfileHEader> createState() => _ProfileHEaderState();
@@ -26,7 +35,7 @@ class _ProfileHEaderState extends State<ProfileHEader> {
           height: 8.h,
         ),
         Text(
-          'Angelika Chayka',
+          widget.fullName,
           style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w700,

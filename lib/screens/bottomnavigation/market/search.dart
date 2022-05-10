@@ -37,7 +37,9 @@ class _SearchScreenState extends State<SearchScreen> {
                         color: Color(0xff5EDE99),
                       ),
                       onPressed: () {
-                        Get.offAll(const NavigationScreen());
+                        Get.offAll(NavigationScreen(
+                          fullNameforprofile: '',
+                        ));
                       },
                     ),
                     hintText: 'Search...',
