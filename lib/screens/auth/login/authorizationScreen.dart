@@ -1,17 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/Common/sizedbox.dart';
-import 'package:myapp/screens/Auth/Login/components/login_headercomponent.dart';
-import 'package:myapp/screens/Auth/signin/signinfirst/SignUp.dart';
 
-import 'package:myapp/screens/bottomnavigation/bottomnavigation.dart';
+import 'package:myapp/screens/Auth/signin/signinfirst/SignUp.dart';
+import 'package:myapp/screens/auth/login/components/login_headercomponent.dart';
+import '../../../Common/AuthButton.dart';
 import '../../../Common/AuthTextformfiel.dart';
-import '../../../Common/authbutton.dart';
+
 import '../../../main.dart';
-import 'components/login_bottomcomponent.dart';
 
 class AuthorizationScreen extends StatefulWidget {
   const AuthorizationScreen({Key? key}) : super(key: key);
@@ -54,6 +53,10 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
     }
   }
 
+  // Future <void> getProfile({}){
+  //   Userinfo user = FirebaseFirestore.instance.collection('User').snapshots().map((snapshot) => snapshot.docs.map((doc) => Userinfo.fromJson(doc.data())))
+  // }
+
   @override
   void dispose() {
     emailController.dispose();
@@ -63,13 +66,13 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffE5E5E5),
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Form(
         key: _formKey,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(15, 93, 15, 0),
           child: ListView(children: [
-            const LoginHeaderComponent(),
+            LoginHeaderComponent(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -153,12 +156,10 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                   child: Text.rich(
                     TextSpan(
                       text: "Don't have an account yet?  ",
-                      style: const TextStyle(
+                      style: TextStyle(
                           height: 1.3,
                           fontSize: 12,
-                          color: Color(
-                            0xff5EDE99,
-                          ),
+                          color: Theme.of(context).primaryColor,
                           fontWeight: FontWeight.w600),
                       children: <TextSpan>[
                         TextSpan(
@@ -169,9 +170,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                           text: 'Register here',
                           style: TextStyle(
                               height: 1.3,
-                              color: Color(
-                                0xff5EDE99,
-                              ),
+                              color: Theme.of(context).primaryColor,
                               fontWeight: FontWeight.w600,
                               fontFamily: 'Mulish',
                               fontSize: 12,
@@ -183,8 +182,6 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                 ),
               ],
             ),
-            SpaceH34(),
-            const LoginBottomComponent(),
           ]),
         ),
       ),

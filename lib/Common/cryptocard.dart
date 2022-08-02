@@ -32,7 +32,7 @@ class commoncryptocard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.r),
         ),
         elevation: 0.0,
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         child: Padding(
           padding: EdgeInsets.fromLTRB(16.w, 12.h, 16.w, 12.h),
           child:

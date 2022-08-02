@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myapp/Common/colors.dart';
 
 class YourAsset extends StatelessWidget {
   const YourAsset({
@@ -44,7 +45,7 @@ class YourAsset extends StatelessWidget {
                       height: 119.h,
                       width: 191.w,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: kCardcolor,
                           borderRadius: BorderRadius.circular(10.r)),
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(16.w, 16.h, 0.w, 0.h),
@@ -184,7 +185,7 @@ class YourAsset extends StatelessWidget {
                       height: 119.h,
                       width: 191.w,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: kCardcolor,
                           borderRadius: BorderRadius.circular(10.r)),
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(8.w, 16.h, 0.w, 0.h),

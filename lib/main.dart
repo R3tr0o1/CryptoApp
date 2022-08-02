@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:myapp/screens/Auth/Login/AuthorizationScreen.dart';
+import 'package:myapp/Common/themdata.dart';
 import 'package:myapp/screens/splashscreen/splashscreen.dart';
 
 final FirebaseAuth auth = FirebaseAuth.instance;
@@ -23,9 +23,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (_) {
-        return const GetMaterialApp(
-          home: SplashScreen(),
-        );
+        return GetMaterialApp(theme: buildLightTheme(), home: SplashScreen());
       },
     );
   }

@@ -3,16 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:myapp/Common/sizedbox.dart';
 import 'package:myapp/screens/BottomNavigation/Home/Notification/notification.dart';
-import 'package:myapp/screens/BottomNavigation/Market/market.dart';
-import 'package:myapp/screens/BottomNavigation/Profile/profile.dart';
+
 import 'Component/Home_Watchlistcomponent.dart';
-import 'Component/home_headercopmponent.dart';
+
 import 'Component/home_portfoliocomponent.dart';
 
 import 'Component/home_assetComponent.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  final String? fullnamehome;
+  DashboardScreen({Key? key, required this.fullnamehome}) : super(key: key);
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -22,10 +22,48 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffE5E5E5),
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xffE5E5E5),
-        title: const Header(),
+        automaticallyImplyLeading: false,
+        backgroundColor: Theme.of(context).backgroundColor,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const CircleAvatar(
+              backgroundImage: AssetImage('asset/image/Ellipse.png'),
+            ),
+            SizedBox(
+              height: 16.h,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 12.w,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Good morning,',
+                    style: TextStyle(
+                        fontFamily: 'Mulish',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xffBEBEBE),
+                        height: 1.25.h),
+                  ),
+                  Text(
+                    widget.fullnamehome.toString(),
+                    style: TextStyle(
+                        fontFamily: 'Mulish',
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff152C07)),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
         actions: [
           IconButton(
             icon: Image.asset(

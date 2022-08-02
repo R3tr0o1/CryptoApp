@@ -17,9 +17,7 @@ class CommonAuthButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed ?? () {},
         style: ElevatedButton.styleFrom(
-          primary: const Color(
-            0xff5EDE99,
-          ),
+          primary: Theme.of(context).primaryColor,
           elevation: 0,
         ),
         child: Text(

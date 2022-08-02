@@ -1,14 +1,14 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:myapp/Common/colors.dart';
 import 'package:myapp/screens/BottomNavigation/Home/home.dart';
 import 'package:myapp/screens/BottomNavigation/Market/market.dart';
 import 'package:myapp/screens/BottomNavigation/Profile/profile.dart';
 
 class NavigationScreen extends StatefulWidget {
   final String? fullNameforprofile;
+
   NavigationScreen({
     Key? key,
     required this.fullNameforprofile,
@@ -22,7 +22,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int currentindex = 0;
 
   late final Screen = [
-    const DashboardScreen(),
+    DashboardScreen(
+      fullnamehome: widget.fullNameforprofile.toString(),
+    ),
     const MarketScreen(),
     ProfileScreen(
       fullName1: widget.fullNameforprofile.toString(),
@@ -36,7 +38,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentindex,
-        selectedItemColor: const Color(0xff00CB6A),
+        selectedItemColor: kSelectedItem,
         onTap: (Index) {
           setState(() {
             currentindex = Index;

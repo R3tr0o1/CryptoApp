@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/models/user.dart';
 import 'package:myapp/screens/bottomnavigation/bottomnavigation.dart';
-
 import '../../../../../Common/AuthButton.dart';
 import '../../../../../Common/authtextformfiel.dart';
 import '../../../../../main.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:myapp/Common/colors.dart';
 import 'package:myapp/screens/BottomNavigation/bottomnavigation.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -13,9 +14,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffE5E5E5),
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xffE5E5E5),
+        backgroundColor: Theme.of(context).backgroundColor,
         leading: IconButton(
             onPressed: () {
               setState(() {
@@ -43,7 +44,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               height: 94,
               width: 345,
               decoration: BoxDecoration(
-                color: const Color(0xffFFFFFF),
+                color: kCardcolor,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(

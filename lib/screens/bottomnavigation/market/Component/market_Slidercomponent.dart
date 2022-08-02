@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myapp/Common/colors.dart';
 
 class MarketSlider extends StatefulWidget {
   const MarketSlider({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _MarketSliderState extends State<MarketSlider> {
                 height: 31.h,
                 width: 70.w,
                 decoration: BoxDecoration(
-                    color: const Color(0xff5EDE99),
+                    color: kPrimarygreen,
                     borderRadius: BorderRadius.circular(8.r)),
                 child: Center(
                     child: Text(

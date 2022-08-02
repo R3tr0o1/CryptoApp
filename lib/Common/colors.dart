@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 
 /// color for theme
 /// Primary Colors
-const kPrimaryTealBlue = Color(0xFF019782);
+const kPrimarygreen = Color(0xff5EDE99);
+const kSecondaryred = Color(0xffFFE0E0);
+const kCardcolor = Color(0xffFFFFFF);
+const kBackgroundColor = Color(0xffE5E5E5);
+const kSelectedItem = Color(0xff00CB6A);
 const kPrimaryMiriage = Color(0xFF17212A);
 const kPrimaryHoki = Color(0xff64829D);
 const kPrimaryWhite = Color(0xffFFFFFF);
@@ -13,8 +17,8 @@ const kIconColor = Color(0xff01B29A);
 const kGrayColor = Color(0xffECEBF0);
 const kTextGray = Color(0xff646464);
 const kButtonGray = Color(0xffAAAAAA);
-const kTextFieldColor = Color(0xffF3F2F7);
-const kTextFieldTextColor = Color(0xff898989);
+const kTextFieldColor = Color(0xffFFFFFF);
+const kTextFieldTextColor = Color(0xff5D5C5D);
 
 ///
 ///Semantic/Secondary color
@@ -27,10 +31,10 @@ const kSemanticRecommended = Color(0xff5BA4FC);
 ///
 /// Color theme
 ColorScheme kColorScheme = ColorScheme(
-  primary: kPrimaryTealBlue,
-  secondary: kSemanticPositive,
+  primary: kPrimarygreen,
+  secondary: kSecondaryred,
   surface: kPrimaryWhite,
-  background: Colors.white,
+  background: kBackgroundColor,
   error: kSemanticNegative,
   onPrimary: kPrimaryHoki,
   onSecondary: kSemanticRecommended,

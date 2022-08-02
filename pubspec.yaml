@@ -46,6 +46,7 @@ dependencies:
   firebase_dynamic_links: ^4.2.1
   provider: ^6.0.2
   firebase_database: ^9.0.12
+  fireflutter: ^0.2.21
 
 flutter_icons:
   android: "launcher_icon"

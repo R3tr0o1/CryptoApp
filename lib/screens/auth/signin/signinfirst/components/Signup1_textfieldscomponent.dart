@@ -1,7 +1,4 @@
-import 'dart:ffi';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -81,7 +78,6 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 17),
                 child: SizedBox(
-                  height: 42,
                   child: DropdownButton(
                     icon: Padding(
                       padding: const EdgeInsets.only(right: 15),
@@ -159,12 +155,5 @@ class _Signup1TextfieldState extends State<Signup1Textfield> {
         ],
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    fullNameController.dispose();
-    phoneNumberController.dispose();
-    super.dispose();
   }
 }
