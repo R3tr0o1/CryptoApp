@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Common/cryptocard.dart';
 
 import 'component/Signup2_Textfieldscomponent.dart';
 import 'component/Signup2_headercomponent.dart';
@@ -25,6 +26,7 @@ class _SignInScreenState extends State<SignInScreen> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 93, 15, 0),
         child: ListView(children: [
+        
           Signup2header(),
           Signup2Textfield(
             fullName: widget.fullNameController,

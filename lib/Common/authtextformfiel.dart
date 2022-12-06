@@ -36,7 +36,7 @@ class CommonAuthTextField extends StatelessWidget {
             ),
           ),
           contentPadding: const EdgeInsets.fromLTRB(14, 12, 0, 12),
-          fillColor: const Color(0xffFFFFFF),
+          fillColor: const Color(0xffF3F2F7),
           filled: true,
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: Color(0xff5EDE99), width: 1),
