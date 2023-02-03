@@ -1,4 +1,3 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,7 +6,7 @@ import 'package:myapp/Common/authtextformfiel.dart';
 import 'package:myapp/screens/auth/signin/signinsecond/Signup2.dart';
 import '../../../../../Common/authbutton.dart';
 import '../../../../../Common/sizedbox.dart';
-import '../../../login/authorizationScreen.dart';
+import '../../../login/authorization_screen.dart';
 
 class Signup1Textfield extends StatefulWidget {
   const Signup1Textfield({

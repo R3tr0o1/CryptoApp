@@ -30,7 +30,7 @@ const kSemanticRecommended = Color(0xff5BA4FC);
 
 ///
 /// Color theme
-ColorScheme kColorScheme = ColorScheme(
+ColorScheme kColorScheme = const ColorScheme(
   primary: kPrimarygreen,
   secondary: kSecondaryred,
   surface: kPrimaryWhite,

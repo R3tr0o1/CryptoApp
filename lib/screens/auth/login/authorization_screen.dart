@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +8,6 @@ import 'package:myapp/screens/Auth/signin/signinfirst/SignUp.dart';
 import 'package:myapp/screens/auth/login/components/login_headercomponent.dart';
 import '../../../Common/AuthButton.dart';
 import '../../../Common/AuthTextformfiel.dart';
-
-import '../../../main.dart';
 
 class AuthorizationScreen extends StatefulWidget {
   const AuthorizationScreen({Key? key}) : super(key: key);
@@ -25,7 +22,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool? _success;
   String? _userEmail;
-
+  FirebaseAuth auth = FirebaseAuth.instance;
   void _signInWithEmailAndPassword() async {
     try {
       final User? user = (await auth.signInWithEmailAndPassword(

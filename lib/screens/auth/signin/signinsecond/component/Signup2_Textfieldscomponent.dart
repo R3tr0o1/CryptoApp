@@ -31,6 +31,7 @@ class _Signup2TextfieldState extends State<Signup2Textfield> {
   TextEditingController confirmpasswordcontroller = TextEditingController();
   bool sucess = false;
   String? usernameEmail;
+  FirebaseAuth auth = FirebaseAuth.instance;
 
   Future<void> createUser(
       {required String fullName, required String phoneNumber}) async {

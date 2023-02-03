@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../Auth/Login/authorizationScreen.dart';
+import '../../../auth/login/authorization_screen.dart';
 
 class ProfileArrangement extends StatefulWidget {
   const ProfileArrangement({Key? key}) : super(key: key);

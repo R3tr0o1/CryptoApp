@@ -1,10 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../../../Common/authbutton.dart';
-import '../../../Login/authorizationScreen.dart';
-import '../../signinsecond/Signup2.dart';
 
 class SignUpBottom1Screen extends StatefulWidget {
   const SignUpBottom1Screen({Key? key}) : super(key: key);

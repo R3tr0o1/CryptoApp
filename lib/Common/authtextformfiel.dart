@@ -4,7 +4,7 @@ class CommonAuthTextField extends StatelessWidget {
   final String hinttext;
   final TextEditingController controller;
   final Function()? onTap;
-  CommonAuthTextField({
+  const CommonAuthTextField({
     required this.hinttext,
     Key? key,
     required this.controller,
